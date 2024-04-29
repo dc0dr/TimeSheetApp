@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap2010:Annotation.AnnotationText="UPTF00000088eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8VmVyc2lvbj5rX19CYWNraW5nRmllbGQiOjF9" sap:VirtualizedContainerService.HintSize="1208,818" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ufa="clr-namespace:UiPath.Forms.Activities;assembly=UiPath.Forms.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap2010:Annotation.AnnotationText="UPTF00000088eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8VmVyc2lvbj5rX19CYWNraW5nRmllbGQiOjF9" sap:VirtualizedContainerService.HintSize="1208,667" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ufa="clr-namespace:UiPath.Forms.Activities;assembly=UiPath.Forms.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -97,36 +97,31 @@
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="str_employeeName" />
       <Variable x:TypeArguments="x:String" Name="str_projectsWorkedOn" />
-      <Variable x:TypeArguments="x:String" Name="str_hoursWorked" />
       <Variable x:TypeArguments="x:String" Name="str_additionalRemarks" />
       <Variable x:TypeArguments="x:String" Name="TimeSheetInstance" />
+      <Variable x:TypeArguments="s:TimeOnly" Name="startTime" />
+      <Variable x:TypeArguments="s:TimeOnly" Name="endTime" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ufa:ShowFormActivity Height="{x:Null}" Left="{x:Null}" ShowInTaskbar="{x:Null}" Top="{x:Null}" TopMost="{x:Null}" Width="{x:Null}" DisplayName="Show Form" FormId="3dbe293a-dc0e-424b-9697-b61cf51a4d64" sap:VirtualizedContainerService.HintSize="354,226" sap2010:WorkflowViewState.IdRef="ShowFormActivity_1" InstanceName="[TimeSheetInstance]" IsAsync="False" Title="4th-IR Time Sheet" WindowState="[UiPath.Studio.Forms.Runtime.WindowState.Normal]">
+    <ufa:ShowFormActivity Height="{x:Null}" Left="{x:Null}" ShowInTaskbar="{x:Null}" ShowMargin="{x:Null}" Title="{x:Null}" Top="{x:Null}" TopMost="{x:Null}" Width="{x:Null}" WindowState="{x:Null}" DisplayName="Show Form" FormId="3dbe293a-dc0e-424b-9697-b61cf51a4d64" sap:VirtualizedContainerService.HintSize="354,226" sap2010:WorkflowViewState.IdRef="ShowFormActivity_2" InstanceName="[TimeSheetInstance]" IsAsync="True">
       <ufa:ShowFormActivity.Arguments>
-        <OutArgument x:TypeArguments="x:String" x:Key="employeeName">[str_employeeName]</OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="projectsWorkedOn">[str_projectsWorkedOn]</OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="hoursWorked">[str_hoursWorked]</OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="additionalRemarks">[str_additionalRemarks]</OutArgument>
+        <OutArgument x:TypeArguments="s:TimeOnly" x:Key="startTime">[startTime]</OutArgument>
+        <OutArgument x:TypeArguments="s:TimeOnly" x:Key="endTime">[endTime]</OutArgument>
       </ufa:ShowFormActivity.Arguments>
-      <ufa:ShowFormActivity.ShowMargin>
-        <InArgument x:TypeArguments="s:Nullable(x:Boolean)">
-          <Literal x:TypeArguments="s:Nullable(x:Boolean)" Value="True" />
-        </InArgument>
-      </ufa:ShowFormActivity.ShowMargin>
     </ufa:ShowFormActivity>
-    <ufa:GetFormFieldsActivity DisplayName="Get Form Values" FormId="3dbe293a-dc0e-424b-9697-b61cf51a4d64" sap:VirtualizedContainerService.HintSize="354,180" sap2010:WorkflowViewState.IdRef="GetFormFieldsActivity_1" InstanceName="[TimeSheetInstance]">
+    <ufa:GetFormFieldsActivity DisplayName="Get Form Values" FormId="3dbe293a-dc0e-424b-9697-b61cf51a4d64" sap:VirtualizedContainerService.HintSize="354,180" sap2010:WorkflowViewState.IdRef="GetFormFieldsActivity_2" InstanceName="[TimeSheetInstance]">
       <ufa:GetFormFieldsActivity.Arguments>
         <OutArgument x:TypeArguments="x:String" x:Key="employeeName">[str_employeeName]</OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="projectsWorkedOn">[str_projectsWorkedOn]</OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="hoursWorked">[str_hoursWorked]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="taskWorkedOn">[str_projectsWorkedOn]</OutArgument>
+        <OutArgument x:TypeArguments="s:TimeOnly" x:Key="startTime">[startTime]</OutArgument>
+        <OutArgument x:TypeArguments="s:TimeOnly" x:Key="endTime">[endTime]</OutArgument>
         <OutArgument x:TypeArguments="x:String" x:Key="additionalRemarks">[str_additionalRemarks]</OutArgument>
       </ufa:GetFormFieldsActivity.Arguments>
     </ufa:GetFormFieldsActivity>
-    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="354,108" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[str_employeeName + vbCr + str_hoursWorked + vbCr + str_projectsWorkedOn + vbCr + str_additionalRemarks]" />
+    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="354,108" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[str_employeeName + vbCr + startTime.ToString + vbCr + str_projectsWorkedOn + vbCr + str_additionalRemarks]" />
   </Sequence>
 </Activity>
