@@ -4,5 +4,18 @@
   "HelpLink": null,
   "Color": null,
   "OriginalIconFileName": null,
-  "Arguments": []
+  "Arguments": [
+    {
+      "Name": "TimeSheetInstance",
+      "DisplayName": "TimeSheetInstance",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": "TimeSheetInstance",
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    }
+  ]
 }
