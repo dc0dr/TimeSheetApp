@@ -93,7 +93,7 @@
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="416,602" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="TimeSheetApp" sap:VirtualizedContainerService.HintSize="416,602" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="str_employeeName" />
       <Variable x:TypeArguments="x:String" Name="str_projectsWorkedOn" />
