@@ -1,11 +1,13 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="SubmitTrigger" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ufa="clr-namespace:UiPath.Forms.Activities;assembly=UiPath.Forms.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="TriggerEventArgs" Type="InArgument(ufa:FormInfoTriggerEventArgs)" />
+    <x:Property Name="StopTriggersOutArgument" Type="OutArgument(x:Boolean)" />
+    <x:Property Name="BreakTriggerScopeInArgument" Type="InArgument(x:String)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1208,818</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1208,905</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>SubmitTrigger_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -96,7 +98,7 @@
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="SubmitTrigger" sap:VirtualizedContainerService.HintSize="416,575" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="SubmitTrigger" sap:VirtualizedContainerService.HintSize="416,840" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="str_employeeName" />
       <Variable x:TypeArguments="s:DateOnly" Name="day" />
@@ -111,7 +113,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ufa:FormTriggerActivity x:TypeArguments="ufa:FormInfoTriggerEventArgs" MessageId="{x:Null}" Tag="{x:Null}" DisplayName="Form Event Trigger" Enabled="True" Event="click.submit" FormId="08991e4c-7c17-4686-b00e-76a660434c73" sap:VirtualizedContainerService.HintSize="354,199" sap2010:WorkflowViewState.IdRef="FormTriggerActivity`1_1" SchedulingMode="Sequential" TriggerId="60147e90-ce78-4faf-8dbc-877c13bbc344" />
+    <ufa:FormTriggerActivity x:TypeArguments="ufa:FormInfoTriggerEventArgs" MessageId="{x:Null}" Tag="{x:Null}" DisplayName="Form Event Trigger" Enabled="True" Event="click.submit" FormId="08991e4c-7c17-4686-b00e-76a660434c73" sap:VirtualizedContainerService.HintSize="354,200" sap2010:WorkflowViewState.IdRef="FormTriggerActivity`1_1" SchedulingMode="Sequential" TriggerId="60147e90-ce78-4faf-8dbc-877c13bbc344" />
     <ufa:GetFormFieldsActivity InstanceName="{x:Null}" DisplayName="Get Form Values" FormId="08991e4c-7c17-4686-b00e-76a660434c73" sap:VirtualizedContainerService.HintSize="354,180" sap2010:WorkflowViewState.IdRef="GetFormFieldsActivity_1">
       <ufa:GetFormFieldsActivity.Arguments>
         <OutArgument x:TypeArguments="x:String" x:Key="employeeName">[str_employeeName]</OutArgument>
@@ -123,6 +125,8 @@
         <OutArgument x:TypeArguments="s:TimeOnly" x:Key="endTime">[endTime]</OutArgument>
       </ufa:GetFormFieldsActivity.Arguments>
     </ufa:GetFormFieldsActivity>
-    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="354,108" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[str_employeeName + vbCr + startTime.ToString + vbCr + startTime.ToString + vbCr + endTime.ToString]" />
+    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="354,125" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[str_employeeName + vbCr + startTime.ToShortTimeString + vbCr + endTime.ToShortTimeString]" />
+    <ufa:CloseFormActivity InstanceName="{x:Null}" DisplayName="Close Form" FormId="08991e4c-7c17-4686-b00e-76a660434c73" sap:VirtualizedContainerService.HintSize="354,129" sap2010:WorkflowViewState.IdRef="CloseFormActivity_1" />
+    <ui:StopTriggers DisplayName="Stop Local Triggers" sap:VirtualizedContainerService.HintSize="354,118" sap2010:WorkflowViewState.IdRef="StopTriggers_1" ShouldStop="[StopTriggersOutArgument]" />
   </Sequence>
 </Activity>

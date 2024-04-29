@@ -156,12 +156,15 @@
         "label": "Columns"
       },
       {
-        "type": "button",
         "label": "Submit",
-        "key": "submit",
+        "action": "event",
+        "showValidations": false,
         "disableOnInvalid": true,
+        "tableView": false,
+        "key": "submit",
+        "type": "button",
         "input": true,
-        "tableView": false
+        "event": "SubmitClick"
       }
     ]
   }
