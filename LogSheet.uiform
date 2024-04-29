@@ -95,9 +95,6 @@
         "placeholder": "Enter name of contractor",
         "tooltip": "Clents are the contractors of the project you worked on",
         "tableView": true,
-        "validate": {
-          "required": true
-        },
         "key": "client",
         "type": "textfield",
         "input": true
