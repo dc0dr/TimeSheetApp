@@ -1,11 +1,13 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="SubmitTrigger" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ufa="clr-namespace:UiPath.Forms.Activities;assembly=UiPath.Forms.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="TriggerEventArgs" Type="InArgument(ufa:FormInfoTriggerEventArgs)" />
+    <x:Property Name="StopTriggersOutArgument" Type="OutArgument(x:Boolean)" />
+    <x:Property Name="BreakTriggerScopeInArgument" Type="InArgument(x:String)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1083,877</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1083,1115</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>SubmitTrigger_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -96,7 +98,7 @@
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="SubmitTrigger" sap:VirtualizedContainerService.HintSize="416,812" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="SubmitTrigger" sap:VirtualizedContainerService.HintSize="416,1050" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="str_EmployeeName" />
       <Variable x:TypeArguments="s:TimeOnly" Name="StartTime" />
@@ -119,8 +121,42 @@
         <OutArgument x:TypeArguments="x:String" x:Key="employeeName">[str_EmployeeName]</OutArgument>
         <OutArgument x:TypeArguments="s:TimeOnly" x:Key="startTime">[StartTime]</OutArgument>
         <OutArgument x:TypeArguments="s:TimeOnly" x:Key="endTime">[EndTime]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="client">[str_Client]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="project">[str_Project]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="task">[str_Task]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="taskDescription1">[TaskDescription]</OutArgument>
+        <OutArgument x:TypeArguments="s:DateOnly" x:Key="dayofwork">[DayOfWork]</OutArgument>
       </ufa:GetFormFieldsActivity.Arguments>
     </ufa:GetFormFieldsActivity>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,164" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[str_EmployeeName + vbCr + StartTime.ToShortTimeString + vbCr + EndTime.ToShortTimeString]" />
+    <ui:StopTriggers DisplayName="Stop Local Triggers" sap:VirtualizedContainerService.HintSize="354,137" sap2010:WorkflowViewState.IdRef="StopTriggers_1" ShouldStop="[StopTriggersOutArgument]" />
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="DataCollection.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,153" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="DataCollection.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="s:DateOnly" x:Key="in_DayOfWork">
+          <VisualBasicValue x:TypeArguments="s:DateOnly" ExpressionText="DayOfWork" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_TaskDescription">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="TaskDescription" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_str_Task">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_Task" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_str_Project">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_Project" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_str_Client">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_Client" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_str_EmployeeName">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_EmployeeName" />
+        </InArgument>
+        <InArgument x:TypeArguments="s:TimeOnly" x:Key="in_StartTime">
+          <VisualBasicValue x:TypeArguments="s:TimeOnly" ExpressionText="StartTime" />
+        </InArgument>
+        <InArgument x:TypeArguments="s:TimeOnly" x:Key="in_EndTime">
+          <VisualBasicValue x:TypeArguments="s:TimeOnly" ExpressionText="EndTime" />
+        </InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ufa:CloseFormActivity InstanceName="{x:Null}" DisplayName="Close Form" FormId="08991e4c-7c17-4686-b00e-76a660434c73" sap:VirtualizedContainerService.HintSize="354,112" sap2010:WorkflowViewState.IdRef="CloseFormActivity_1" />
   </Sequence>
 </Activity>
