@@ -98,23 +98,23 @@
       <AssemblyReference>System.Private.Xml</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:WorkflowViewState.IdRef="Generated_150">
+  <Sequence sap2010:WorkflowViewState.IdRef="Generated_70">
     <Sequence.Variables>
       <x:Reference>__ReferenceID0</x:Reference>
     </Sequence.Variables>
-    <upt:InterruptibleTriggerInitializer sap2010:WorkflowViewState.IdRef="Generated_81" />
-    <Parallel sap2010:WorkflowViewState.IdRef="Generated_92" CompletionCondition="[StopTriggersVariable]">
-      <Sequence sap2010:WorkflowViewState.IdRef="Generated_123">
+    <upt:InterruptibleTriggerInitializer sap2010:WorkflowViewState.IdRef="Generated_01" />
+    <Parallel sap2010:WorkflowViewState.IdRef="Generated_12" CompletionCondition="[StopTriggersVariable]">
+      <Sequence sap2010:WorkflowViewState.IdRef="Generated_43">
         <Sequence.Variables>
           <Variable x:TypeArguments="x:String" Default="[&quot;0&quot;]" Name="BreakTriggerScopeVariableName" />
         </Sequence.Variables>
-        <ui:TriggerScope sap2010:WorkflowViewState.IdRef="Generated_114" SchedulingMode="Sequential">
+        <ui:TriggerScope sap2010:WorkflowViewState.IdRef="Generated_34" SchedulingMode="Sequential">
           <ui:TriggerScope.Action>
             <ActivityAction x:TypeArguments="ufa:FormInfoTriggerEventArgs">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="ufa:FormInfoTriggerEventArgs" Name="TriggerEventArgs" />
               </ActivityAction.Argument>
-              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SubmitTrigger.xaml - Invoke Workflow File" sap2010:WorkflowViewState.IdRef="Generated_106" UnSafe="False" WorkflowFileName="SubmitTrigger.xaml">
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SubmitTrigger.xaml - Invoke Workflow File" sap2010:WorkflowViewState.IdRef="Generated_26" UnSafe="False" WorkflowFileName="SubmitTrigger.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
                   <OutArgument x:TypeArguments="x:Boolean" x:Key="StopTriggersOutArgument">[StopTriggersVariable]</OutArgument>
                   <InArgument x:TypeArguments="ufa:FormInfoTriggerEventArgs" x:Key="TriggerEventArgs">[TriggerEventArgs]</InArgument>
@@ -130,8 +130,8 @@
           </ui:TriggerScope.Triggers>
         </ui:TriggerScope>
       </Sequence>
-      <Sequence sap2010:WorkflowViewState.IdRef="Generated_137">
-        <ui:ListenForStopTriggers sap2010:WorkflowViewState.IdRef="Generated_148" />
+      <Sequence sap2010:WorkflowViewState.IdRef="Generated_57">
+        <ui:ListenForStopTriggers sap2010:WorkflowViewState.IdRef="Generated_68" />
         <Assign x:TypeArguments="x:Boolean" Value="True">
           <Assign.To>
             <OutArgument x:TypeArguments="x:Boolean">
