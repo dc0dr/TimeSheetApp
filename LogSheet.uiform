@@ -15,7 +15,7 @@
       {
         "tag": "h1",
         "content": "New Log Sheet",
-        "key": "label",
+        "key": "Header",
         "input": false,
         "tableView": false,
         "label": "Label",
@@ -34,35 +34,6 @@
         "input": true
       },
       {
-        "label": "Day of work",
-        "hideInputLabels": false,
-        "inputsLabelPosition": "top",
-        "tableView": true,
-        "fields": {
-          "day": {
-            "type": "select",
-            "hide": false,
-            "required": true
-          },
-          "month": {
-            "hide": false,
-            "required": true
-          },
-          "year": {
-            "type": "select",
-            "hide": false,
-            "required": true,
-            "minYear": 2024,
-            "maxYear": 2024
-          }
-        },
-        "key": "day",
-        "type": "day",
-        "input": true,
-        "maxYear": 2024,
-        "minYear": 2024
-      },
-      {
         "label": "Client:",
         "placeholder": "Enter name of contractor",
         "tooltip": "Clents are the contractors of the project you worked on",
@@ -75,9 +46,6 @@
         "label": "Project:",
         "tooltip": "Name of Project worked on",
         "tableView": true,
-        "validate": {
-          "required": true
-        },
         "key": "project",
         "type": "textfield",
         "input": true
@@ -87,9 +55,6 @@
         "placeholder": "What did you work on?",
         "tooltip": "Justify what task you spent your work time on",
         "tableView": true,
-        "validate": {
-          "required": true
-        },
         "key": "task",
         "type": "textfield",
         "input": true
@@ -101,6 +66,30 @@
         "key": "taskDescription1",
         "type": "textarea",
         "input": true
+      },
+      {
+        "label": "Day of work",
+        "hideInputLabels": false,
+        "inputsLabelPosition": "top",
+        "tableView": true,
+        "fields": {
+          "day": {
+            "hide": false
+          },
+          "month": {
+            "hide": false
+          },
+          "year": {
+            "hide": false,
+            "minYear": 2024,
+            "maxYear": 2024
+          }
+        },
+        "key": "dayofwork",
+        "type": "day",
+        "input": true,
+        "maxYear": 2024,
+        "minYear": 2024
       },
       {
         "columns": [
@@ -164,7 +153,7 @@
         "key": "submit",
         "type": "button",
         "input": true,
-        "event": "SubmitClick"
+        "event": "Button Click"
       }
     ]
   }

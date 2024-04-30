@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="SubmitTrigger" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:r="clr-namespace:RPA_TimeSheetApp;assembly=DataService.RPA_TimeSheetApp" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:uda="clr-namespace:UiPath.DataService.Activities;assembly=UiPath.DataService.Activities.Core" xmlns:udam="clr-namespace:UiPath.DataService.Activities.Models;assembly=UiPath.DataService.Activities.Core" xmlns:ufa="clr-namespace:UiPath.Forms.Activities;assembly=UiPath.Forms.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+﻿<Activity mc:Ignorable="sap sap2010" x:Class="SubmitTrigger" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ufa="clr-namespace:UiPath.Forms.Activities;assembly=UiPath.Forms.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="TriggerEventArgs" Type="InArgument(ufa:FormInfoTriggerEventArgs)" />
     <x:Property Name="StopTriggersOutArgument" Type="OutArgument(x:Boolean)" />
@@ -7,7 +7,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1208,1474</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1208,1113</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>SubmitTrigger_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -43,11 +43,6 @@
       <x:String>System.Runtime.Serialization</x:String>
       <x:String>UiPath.Studio.Forms.Runtime</x:String>
       <x:String>System.Linq.Expressions</x:String>
-      <x:String>RPA_TimeSheetApp</x:String>
-      <x:String>UiPath.DataService.Definition</x:String>
-      <x:String>UiPath.DataService.Activities.Models</x:String>
-      <x:String>UiPath.DataService.Activities</x:String>
-      <x:String>UiPath.Shared.Activities</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -84,11 +79,9 @@
       <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
       <AssemblyReference>UiPath.Studio.Forms.Runtime</AssemblyReference>
-      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
-      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
-      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
-      <AssemblyReference>NPOI</AssemblyReference>
       <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
       <AssemblyReference>System.Console</AssemblyReference>
       <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
       <AssemblyReference>System.Security.Permissions</AssemblyReference>
@@ -98,100 +91,55 @@
       <AssemblyReference>System.Collections</AssemblyReference>
       <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
       <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
       <AssemblyReference>System.CodeDom</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
-      <AssemblyReference>netstandard</AssemblyReference>
-      <AssemblyReference>DataService.RPA_TimeSheetApp</AssemblyReference>
-      <AssemblyReference>UiPath.DataService.Definition</AssemblyReference>
-      <AssemblyReference>UiPath.DataService.Activities.Core</AssemblyReference>
-      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
-      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
-      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
-      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
-      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="SubmitTrigger" sap:VirtualizedContainerService.HintSize="416,1409" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="SubmitTrigger" sap:VirtualizedContainerService.HintSize="416,1048" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" Name="str_employeeName" />
-      <Variable x:TypeArguments="s:DateOnly" Name="day" />
+      <Variable x:TypeArguments="x:String" Name="str_EmployeeName" />
+      <Variable x:TypeArguments="s:TimeOnly" Name="StartTime" />
+      <Variable x:TypeArguments="s:TimeOnly" Name="EndTime" />
       <Variable x:TypeArguments="x:String" Name="str_Client" />
-      <Variable x:TypeArguments="x:String" Name="str_Task" />
-      <Variable x:TypeArguments="x:String" Name="str_TaskDesc" />
-      <Variable x:TypeArguments="s:TimeOnly" Name="startTime" />
-      <Variable x:TypeArguments="s:TimeOnly" Name="endTime" />
       <Variable x:TypeArguments="x:String" Name="str_Project" />
+      <Variable x:TypeArguments="x:String" Name="str_Task" />
+      <Variable x:TypeArguments="x:String" Name="TaskDescription" />
+      <Variable x:TypeArguments="s:DateOnly" Name="DayOfWork" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ufa:FormTriggerActivity x:TypeArguments="ufa:FormInfoTriggerEventArgs" MessageId="{x:Null}" Tag="{x:Null}" DisplayName="Form Event Trigger" Enabled="True" Event="click.submit" FormId="08991e4c-7c17-4686-b00e-76a660434c73" sap:VirtualizedContainerService.HintSize="354,199" sap2010:WorkflowViewState.IdRef="FormTriggerActivity`1_1" SchedulingMode="Sequential" TriggerId="60147e90-ce78-4faf-8dbc-877c13bbc344" />
-    <ufa:GetFormFieldsActivity InstanceName="{x:Null}" DisplayName="Get Form Values" FormId="08991e4c-7c17-4686-b00e-76a660434c73" sap:VirtualizedContainerService.HintSize="354,180" sap2010:WorkflowViewState.IdRef="GetFormFieldsActivity_1">
+    <ufa:FormTriggerActivity x:TypeArguments="ufa:FormInfoTriggerEventArgs" MessageId="{x:Null}" Tag="{x:Null}" DisplayName="Form Event Trigger" Enabled="True" Event="click.submit" FormId="08991e4c-7c17-4686-b00e-76a660434c73" sap:VirtualizedContainerService.HintSize="354,199" sap2010:WorkflowViewState.IdRef="FormTriggerActivity`1_1" SchedulingMode="Sequential" TriggerId="f5093a52-08db-4346-b847-2abaccca20ad" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,181" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Form Submission Completed&quot;]" />
+    <ufa:GetFormFieldsActivity InstanceName="{x:Null}" DisplayName="Get Form Values" FormId="08991e4c-7c17-4686-b00e-76a660434c73" sap:VirtualizedContainerService.HintSize="354,180" sap2010:WorkflowViewState.IdRef="GetFormFieldsActivity_2">
       <ufa:GetFormFieldsActivity.Arguments>
-        <OutArgument x:TypeArguments="x:String" x:Key="employeeName">[str_employeeName]</OutArgument>
-        <OutArgument x:TypeArguments="s:DateOnly" x:Key="day">[day]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="employeeName">[str_EmployeeName]</OutArgument>
+        <OutArgument x:TypeArguments="s:TimeOnly" x:Key="startTime">[StartTime]</OutArgument>
+        <OutArgument x:TypeArguments="s:TimeOnly" x:Key="endTime">[EndTime]</OutArgument>
         <OutArgument x:TypeArguments="x:String" x:Key="client">[str_Client]</OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="task">[str_Task]</OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="taskDescription1">[str_TaskDesc]</OutArgument>
-        <OutArgument x:TypeArguments="s:TimeOnly" x:Key="startTime">[startTime]</OutArgument>
-        <OutArgument x:TypeArguments="s:TimeOnly" x:Key="endTime">[endTime]</OutArgument>
         <OutArgument x:TypeArguments="x:String" x:Key="project">[str_Project]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="task">[str_Task]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="taskDescription1">[TaskDescription]</OutArgument>
+        <OutArgument x:TypeArguments="s:DateOnly" x:Key="dayofwork">[DayOfWork]</OutArgument>
       </ufa:GetFormFieldsActivity.Arguments>
     </ufa:GetFormFieldsActivity>
-    <uda:CreateEntityRecord x:TypeArguments="r:TimesheetApp" InputEntity="{x:Null}" OutputEntity="{x:Null}" VisibleDynamicPropertiesInfo="{x:Null}" ContinueOnError="False" DisplayName="Create Entity Record" EntityId="2dd6de59-8106-ef11-aaf3-000d3ab703d4" ExpansionDepth="2" sap:VirtualizedContainerService.HintSize="354,570" sap2010:WorkflowViewState.IdRef="CreateEntityRecord`1_1" InputEntityInFieldView="[new RPA_TimeSheetApp.TimesheetApp() With {  .Day = day.ToShortDateString,  .EmployeeName = str_employeeName,  .EndTime = endTime.ToShortTimeString,  .StartDate = startTime.ToShortTimeString,  .Client = str_Client,  .Project = str_Project,  .Task = str_Task,  .TaskDescription = str_TaskDesc }]" IsInRecordView="False" TimeoutInMs="30000">
-      <uda:CreateEntityRecord.State>
-        <udam:RecordState RequiredFieldCount="4">
-          <udam:RecordState.SelectedFields>
-            <scg:List x:TypeArguments="udam:DynamicEntityField" Capacity="8">
-              <udam:DynamicEntityField Id="294c7b85-8306-ef11-aaf3-000d3ab703d4" IsRequired="True" Name="Day">
-                <udam:DynamicEntityField.ArgumentValue>
-                  <InArgument x:TypeArguments="x:String">[day.ToShortDateString]</InArgument>
-                </udam:DynamicEntityField.ArgumentValue>
-              </udam:DynamicEntityField>
-              <udam:DynamicEntityField Id="7bec5182-8106-ef11-aaf3-000d3ab703d4" IsRequired="True" Name="EmployeeName">
-                <udam:DynamicEntityField.ArgumentValue>
-                  <InArgument x:TypeArguments="x:String">[str_employeeName]</InArgument>
-                </udam:DynamicEntityField.ArgumentValue>
-              </udam:DynamicEntityField>
-              <udam:DynamicEntityField Id="cc9a823f-8206-ef11-aaf3-000d3ab703d4" IsRequired="True" Name="EndTime">
-                <udam:DynamicEntityField.ArgumentValue>
-                  <InArgument x:TypeArguments="x:String">[endTime.ToShortTimeString]</InArgument>
-                </udam:DynamicEntityField.ArgumentValue>
-              </udam:DynamicEntityField>
-              <udam:DynamicEntityField Id="e0509c32-8206-ef11-aaf3-000d3ab703d4" IsRequired="True" Name="StartDate">
-                <udam:DynamicEntityField.ArgumentValue>
-                  <InArgument x:TypeArguments="x:String">[startTime.ToShortTimeString]</InArgument>
-                </udam:DynamicEntityField.ArgumentValue>
-              </udam:DynamicEntityField>
-              <udam:DynamicEntityField Id="aee0866b-8206-ef11-aaf3-000d3ab703d4" Name="Client">
-                <udam:DynamicEntityField.ArgumentValue>
-                  <InArgument x:TypeArguments="x:String">[str_Client]</InArgument>
-                </udam:DynamicEntityField.ArgumentValue>
-              </udam:DynamicEntityField>
-              <udam:DynamicEntityField Id="7d135a65-8206-ef11-aaf3-000d3ab703d4" Name="Project">
-                <udam:DynamicEntityField.ArgumentValue>
-                  <InArgument x:TypeArguments="x:String">[str_Project]</InArgument>
-                </udam:DynamicEntityField.ArgumentValue>
-              </udam:DynamicEntityField>
-              <udam:DynamicEntityField Id="8340494a-8206-ef11-aaf3-000d3ab703d4" Name="Task">
-                <udam:DynamicEntityField.ArgumentValue>
-                  <InArgument x:TypeArguments="x:String">[str_Task]</InArgument>
-                </udam:DynamicEntityField.ArgumentValue>
-              </udam:DynamicEntityField>
-              <udam:DynamicEntityField Id="08ff8559-8206-ef11-aaf3-000d3ab703d4" Name="TaskDescription">
-                <udam:DynamicEntityField.ArgumentValue>
-                  <InArgument x:TypeArguments="x:String">[str_TaskDesc]</InArgument>
-                </udam:DynamicEntityField.ArgumentValue>
-              </udam:DynamicEntityField>
-            </scg:List>
-          </udam:RecordState.SelectedFields>
-        </udam:RecordState>
-      </uda:CreateEntityRecord.State>
-    </uda:CreateEntityRecord>
-    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="354,125" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[str_employeeName + vbCr + startTime.ToShortTimeString + vbCr + endTime.ToShortTimeString]" />
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="DataCollection.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,153" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="DataCollection.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="s:DateOnly" x:Key="in_DayOfWork">[DayOfWork]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_TaskDescription">[TaskDescription]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_str_Task">[str_Task]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_str_Project">[str_Project]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_str_Client">[str_Client]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_str_EmployeeName">[str_EmployeeName]</InArgument>
+        <InArgument x:TypeArguments="s:TimeOnly" x:Key="in_StartTime">[StartTime]</InArgument>
+        <InArgument x:TypeArguments="s:TimeOnly" x:Key="in_EndTime">[EndTime]</InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
     <ufa:CloseFormActivity InstanceName="{x:Null}" DisplayName="Close Form" FormId="08991e4c-7c17-4686-b00e-76a660434c73" sap:VirtualizedContainerService.HintSize="354,129" sap2010:WorkflowViewState.IdRef="CloseFormActivity_1" />
     <ui:StopTriggers DisplayName="Stop Local Triggers" sap:VirtualizedContainerService.HintSize="354,118" sap2010:WorkflowViewState.IdRef="StopTriggers_1" ShouldStop="[StopTriggersOutArgument]" />
   </Sequence>
