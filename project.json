@@ -4,6 +4,7 @@
   "description": "a timesheet application for 4th-IR",
   "main": "Main.xaml",
   "dependencies": {
+    "UiPath.DataService.Activities": "[23.10.0]",
     "UiPath.Excel.Activities": "[2.23.2-preview]",
     "UiPath.Form.Activities": "[24.2.0-preview]",
     "UiPath.Mail.Activities": "[1.22.1]",
@@ -12,7 +13,14 @@
     "UiPath.UIAutomation.Activities": "[24.2.0-preview]"
   },
   "webServices": [],
-  "entitiesStores": [],
+  "entitiesStores": [
+    {
+      "serviceDocument": ".entities/EntitiesStore.json",
+      "tenantName": "ShiroyashasTenant",
+      "namespace": "RPA_TimeSheetApp",
+      "uniqueReference": "7e2kNRGwh0+h5xFIpNEiB4iTgZaOMTs3e8QSQTg72ME="
+    }
+  ],
   "schemaVersion": "4.0",
   "studioVersion": "24.2.1.0",
   "projectVersion": "1.0.0",
