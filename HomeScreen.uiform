@@ -1,0 +1,28 @@
+﻿{
+  "Metadata": {
+    "Id": "9721c340-d926-4312-987b-e18840b60a5e",
+    "Kind": "FormIo"
+  },
+  "DesignProperties": {
+    "Title": "Home",
+    "Theme": "Sandstone",
+    "ShowInTaskbar": true,
+    "ShowMargin": true,
+    "CustomStyle": ""
+  },
+  "Data": {
+    "components": [
+      {
+        "label": "Add Task +",
+        "action": "event",
+        "showValidations": false,
+        "size": "sm",
+        "tableView": false,
+        "key": "addTask",
+        "type": "button",
+        "event": "Add Task Button",
+        "input": true
+      }
+    ]
+  }
+}

@@ -7,7 +7,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1083,1683</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1083,1941</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>SubmitTrigger_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -112,7 +112,7 @@
       <AssemblyReference>DataService.RPA_TimeSheetApp</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="SubmitTrigger" sap:VirtualizedContainerService.HintSize="416,1618" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="SubmitTrigger" sap:VirtualizedContainerService.HintSize="416,1876" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="str_EmployeeName" />
       <Variable x:TypeArguments="s:TimeOnly" Name="StartTime" />
@@ -142,6 +142,8 @@
         <OutArgument x:TypeArguments="s:DateOnly" x:Key="dayofwork">[DayOfWork]</OutArgument>
       </ufa:GetFormFieldsActivity.Arguments>
     </ufa:GetFormFieldsActivity>
+    <ufa:CloseFormActivity InstanceName="{x:Null}" DisplayName="Close Form" FormId="08991e4c-7c17-4686-b00e-76a660434c73" sap:VirtualizedContainerService.HintSize="354,129" sap2010:WorkflowViewState.IdRef="CloseFormActivity_2" />
+    <ufa:ChangeFormPropertiesActivity Height="{x:Null}" InstanceName="{x:Null}" Left="{x:Null}" ShowMargin="{x:Null}" Title="{x:Null}" Top="{x:Null}" TopMost="{x:Null}" Width="{x:Null}" DisplayName="Change Form Properties" FormId="9721c340-d926-4312-987b-e18840b60a5e" sap:VirtualizedContainerService.HintSize="354,129" sap2010:WorkflowViewState.IdRef="ChangeFormPropertiesActivity_2" WindowState="[UiPath.Studio.Forms.Runtime.WindowState.Normal]" />
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="DataCollection.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,153" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="DataCollection.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="s:DateOnly" x:Key="in_DayOfWork">[DayOfWork]</InArgument>
