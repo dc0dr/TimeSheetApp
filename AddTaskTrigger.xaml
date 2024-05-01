@@ -5,7 +5,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>406,690</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1208,813</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>AddTaskTrigger_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -79,14 +79,14 @@
       <AssemblyReference>UiPath.Studio.Forms.Runtime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="AddTaskTrigger" sap:VirtualizedContainerService.HintSize="416,625" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="AddTaskTrigger" sap:VirtualizedContainerService.HintSize="416,609" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ufa:FormTriggerActivity x:TypeArguments="ufa:FormInfoTriggerEventArgs" MessageId="{x:Null}" Tag="{x:Null}" DisplayName="Form Event Trigger" Enabled="True" Event="click.addTask" FormId="9721c340-d926-4312-987b-e18840b60a5e" sap:VirtualizedContainerService.HintSize="354,199" sap2010:WorkflowViewState.IdRef="FormTriggerActivity`1_1" SchedulingMode="Sequential" TriggerId="fc3a202d-0182-411b-bb57-985ab404088c" />
-    <ufa:ChangeFormPropertiesActivity Height="{x:Null}" InstanceName="{x:Null}" Left="{x:Null}" ShowMargin="{x:Null}" Title="{x:Null}" Top="{x:Null}" TopMost="{x:Null}" Width="{x:Null}" DisplayName="Change Form Properties" FormId="9721c340-d926-4312-987b-e18840b60a5e" sap:VirtualizedContainerService.HintSize="354,129" sap2010:WorkflowViewState.IdRef="ChangeFormPropertiesActivity_1" WindowState="[UiPath.Studio.Forms.Runtime.WindowState.Minimized]" />
+    <ufa:FormTriggerActivity x:TypeArguments="ufa:FormInfoTriggerEventArgs" MessageId="{x:Null}" Tag="{x:Null}" DisplayName="Form Event Trigger" Enabled="True" Event="click.addTask" FormId="9721c340-d926-4312-987b-e18840b60a5e" sap:VirtualizedContainerService.HintSize="354,191" sap2010:WorkflowViewState.IdRef="FormTriggerActivity`1_1" SchedulingMode="Sequential" TriggerId="fc3a202d-0182-411b-bb57-985ab404088c" />
+    <ufa:ChangeFormPropertiesActivity Height="{x:Null}" InstanceName="{x:Null}" Left="{x:Null}" ShowMargin="{x:Null}" Title="{x:Null}" Top="{x:Null}" TopMost="{x:Null}" Width="{x:Null}" DisplayName="Change Form Properties" FormId="9721c340-d926-4312-987b-e18840b60a5e" sap:VirtualizedContainerService.HintSize="354,121" sap2010:WorkflowViewState.IdRef="ChangeFormPropertiesActivity_1" WindowState="[UiPath.Studio.Forms.Runtime.WindowState.Minimized]" />
     <ufa:ShowFormActivity InstanceName="{x:Null}" ShowMargin="{x:Null}" Title="{x:Null}" TopMost="{x:Null}" WindowState="{x:Null}" DisplayName="Show Form" FormId="08991e4c-7c17-4686-b00e-76a660434c73" sap:VirtualizedContainerService.HintSize="354,209" sap2010:WorkflowViewState.IdRef="ShowFormActivity_1" IsAsync="True">
       <ufa:ShowFormActivity.Arguments>
         <scg:Dictionary x:TypeArguments="x:String, Argument" />
