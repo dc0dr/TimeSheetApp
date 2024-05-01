@@ -4,7 +4,7 @@
     "Kind": "FormIo"
   },
   "DesignProperties": {
-    "Title": "LogSheet",
+    "Title": "App - New Log Sheet",
     "Theme": "Sandstone",
     "ShowInTaskbar": true,
     "ShowMargin": true,
@@ -12,15 +12,6 @@
   },
   "Data": {
     "components": [
-      {
-        "tag": "h1",
-        "content": "New Log Sheet",
-        "key": "Header",
-        "input": false,
-        "tableView": false,
-        "label": "Label",
-        "type": "label"
-      },
       {
         "label": "Employee Name:",
         "placeholder": "Enter your name",
@@ -74,13 +65,16 @@
         "tableView": true,
         "fields": {
           "day": {
-            "hide": false
+            "hide": false,
+            "required": true
           },
           "month": {
-            "hide": false
+            "hide": false,
+            "required": true
           },
           "year": {
             "hide": false,
+            "required": true,
             "minYear": 2024,
             "maxYear": 2024
           }

@@ -1,4 +1,12 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap2010:Annotation.AnnotationText="UPTF00000088eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8VmVyc2lvbj5rX19CYWNraW5nRmllbGQiOjF9" sap:VirtualizedContainerService.HintSize="1083,528" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ufa="clr-namespace:UiPath.Forms.Activities;assembly=UiPath.Forms.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="AddTaskTrigger" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ufa="clr-namespace:UiPath.Forms.Activities;assembly=UiPath.Forms.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="TriggerEventArgs" Type="InArgument(ufa:FormInfoTriggerEventArgs)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1208,813</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>AddTaskTrigger_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -25,25 +33,20 @@
       <x:String>System.Windows.Markup</x:String>
       <x:String>GlobalVariablesNamespace</x:String>
       <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.Platform.Triggers</x:String>
+      <x:String>UiPath.Forms.Activities</x:String>
+      <x:String>UiPath.Platform.Triggers.Scope</x:String>
+      <x:String>UiPath.Forms.Activities.Base</x:String>
+      <x:String>System.Reflection</x:String>
       <x:String>System.Runtime.Serialization</x:String>
       <x:String>UiPath.Studio.Forms.Runtime</x:String>
-      <x:String>System.Reflection</x:String>
-      <x:String>UiPath.Forms.Activities</x:String>
       <x:String>UiPath.Platform.GlobalVariables</x:String>
-      <x:String>UiPath.Forms.Activities.Base</x:String>
-      <x:String>System.Linq.Expressions</x:String>
-      <x:String>UiPath.Platform.Triggers</x:String>
-      <x:String>UiPath.Platform.Triggers.Scope</x:String>
-      <x:String>System.ComponentModel</x:String>
-      <x:String>System.Xml.Serialization</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
     <sco:Collection x:TypeArguments="AssemblyReference">
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
-      <AssemblyReference>PresentationCore</AssemblyReference>
-      <AssemblyReference>PresentationFramework</AssemblyReference>
       <AssemblyReference>System</AssemblyReference>
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
@@ -63,54 +66,34 @@
       <AssemblyReference>System.Xml.Linq</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities</AssemblyReference>
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
-      <AssemblyReference>WindowsBase</AssemblyReference>
       <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Forms.Activities</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
       <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
       <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
       <AssemblyReference>UiPath.Studio.Forms.Runtime</AssemblyReference>
-      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
-      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
-      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
-      <AssemblyReference>System.Reflection.MetadataLoadContext</AssemblyReference>
-      <AssemblyReference>UiPath.Forms.Activities</AssemblyReference>
-      <AssemblyReference>UiPath.Platform</AssemblyReference>
-      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
-      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
-      <AssemblyReference>System.Memory.Data</AssemblyReference>
-      <AssemblyReference>NPOI</AssemblyReference>
-      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
-      <AssemblyReference>System.Console</AssemblyReference>
-      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
-      <AssemblyReference>System.Security.Permissions</AssemblyReference>
-      <AssemblyReference>System.ComponentModel</AssemblyReference>
-      <AssemblyReference>System.Memory</AssemblyReference>
-      <AssemblyReference>System.Private.Uri</AssemblyReference>
-      <AssemblyReference>System.Collections</AssemblyReference>
-      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
-      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
-      <AssemblyReference>System.CodeDom</AssemblyReference>
-      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
-      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
-      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
-      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
-      <AssemblyReference>System.Private.Xml</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="TimeSheetApp" sap:VirtualizedContainerService.HintSize="416,432" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="AddTaskTrigger" sap:VirtualizedContainerService.HintSize="416,609" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ufa:ShowFormActivity InstanceName="{x:Null}" ShowInTaskbar="{x:Null}" ShowMargin="{x:Null}" Title="{x:Null}" TopMost="{x:Null}" WindowState="{x:Null}" DisplayName="Show Form" FormId="9721c340-d926-4312-987b-e18840b60a5e" sap:VirtualizedContainerService.HintSize="354,226" sap2010:WorkflowViewState.IdRef="ShowFormActivity_3" IsAsync="True">
+    <ufa:FormTriggerActivity x:TypeArguments="ufa:FormInfoTriggerEventArgs" MessageId="{x:Null}" Tag="{x:Null}" DisplayName="Form Event Trigger" Enabled="True" Event="click.addTask" FormId="9721c340-d926-4312-987b-e18840b60a5e" sap:VirtualizedContainerService.HintSize="354,191" sap2010:WorkflowViewState.IdRef="FormTriggerActivity`1_1" SchedulingMode="Sequential" TriggerId="fc3a202d-0182-411b-bb57-985ab404088c" />
+    <ufa:ChangeFormPropertiesActivity Height="{x:Null}" InstanceName="{x:Null}" Left="{x:Null}" ShowMargin="{x:Null}" Title="{x:Null}" Top="{x:Null}" TopMost="{x:Null}" Width="{x:Null}" DisplayName="Change Form Properties" FormId="9721c340-d926-4312-987b-e18840b60a5e" sap:VirtualizedContainerService.HintSize="354,121" sap2010:WorkflowViewState.IdRef="ChangeFormPropertiesActivity_1" WindowState="[UiPath.Studio.Forms.Runtime.WindowState.Minimized]" />
+    <ufa:ShowFormActivity InstanceName="{x:Null}" ShowMargin="{x:Null}" Title="{x:Null}" TopMost="{x:Null}" WindowState="{x:Null}" DisplayName="Show Form" FormId="08991e4c-7c17-4686-b00e-76a660434c73" sap:VirtualizedContainerService.HintSize="354,209" sap2010:WorkflowViewState.IdRef="ShowFormActivity_1" IsAsync="True">
       <ufa:ShowFormActivity.Arguments>
         <scg:Dictionary x:TypeArguments="x:String, Argument" />
       </ufa:ShowFormActivity.Arguments>
       <ufa:ShowFormActivity.Height>
         <InArgument x:TypeArguments="s:Nullable(x:Int32)">
-          <Literal x:TypeArguments="s:Nullable(x:Int32)" Value="250" />
+          <Literal x:TypeArguments="s:Nullable(x:Int32)" Value="500" />
         </InArgument>
       </ufa:ShowFormActivity.Height>
       <ufa:ShowFormActivity.Left>
@@ -118,6 +101,11 @@
           <Literal x:TypeArguments="s:Nullable(x:Int32)" Value="0" />
         </InArgument>
       </ufa:ShowFormActivity.Left>
+      <ufa:ShowFormActivity.ShowInTaskbar>
+        <InArgument x:TypeArguments="s:Nullable(x:Boolean)">
+          <Literal x:TypeArguments="s:Nullable(x:Boolean)" Value="True" />
+        </InArgument>
+      </ufa:ShowFormActivity.ShowInTaskbar>
       <ufa:ShowFormActivity.Top>
         <InArgument x:TypeArguments="s:Nullable(x:Int32)">
           <Literal x:TypeArguments="s:Nullable(x:Int32)" Value="0" />
@@ -125,14 +113,9 @@
       </ufa:ShowFormActivity.Top>
       <ufa:ShowFormActivity.Width>
         <InArgument x:TypeArguments="s:Nullable(x:Int32)">
-          <Literal x:TypeArguments="s:Nullable(x:Int32)" Value="300" />
+          <Literal x:TypeArguments="s:Nullable(x:Int32)" Value="600" />
         </InArgument>
       </ufa:ShowFormActivity.Width>
     </ufa:ShowFormActivity>
-    <ui:StartTriggers ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Run Local Triggers" sap:VirtualizedContainerService.HintSize="354,118" sap2010:WorkflowViewState.IdRef="StartTriggers_1" UnSafe="False" WorkflowFileName=".local\generated\Triggers.Generated.xaml">
-      <ui:StartTriggers.Arguments>
-        <scg:Dictionary x:TypeArguments="x:String, Argument" />
-      </ui:StartTriggers.Arguments>
-    </ui:StartTriggers>
   </Sequence>
 </Activity>
