@@ -12,7 +12,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1208,1347</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1192,1347</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>DataCollection_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -106,6 +106,9 @@
       <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Platform</AssemblyReference>
       <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="DataCollection" sap:VirtualizedContainerService.HintSize="558,1282" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -138,7 +141,7 @@
           <OutArgument x:TypeArguments="x:String">[NewDatabase]</OutArgument>
         </Assign.To>
         <Assign.Value>
-          <InArgument x:TypeArguments="x:String">[Database + Output.Split(Environment.NewLine)(1)]</InArgument>
+          <InArgument x:TypeArguments="x:String" xml:space="preserve">[Database + vbCr +  Output.Split(Environment.NewLine)(1)]</InArgument>
         </Assign.Value>
       </Assign>
       <ucas:WriteStorageText TimeoutMS="{x:Null}" DisplayName="Write Storage Text" sap:VirtualizedContainerService.HintSize="434,209" sap2010:WorkflowViewState.IdRef="WriteStorageText_3" Path="LocalStorage.csv" StorageBucketName="TimeSheetApp" Text="[NewDatabase]" />
